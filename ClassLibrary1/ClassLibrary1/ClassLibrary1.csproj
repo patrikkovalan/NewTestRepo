@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+   <Project Sdk="Microsoft.NET.Sdk">
+   
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting" />
+        <PackageReference Include="Serilog.Settings.Configuration" />
+        <PackageReference Include="Serilog.Enrichers.Thread" />
+        <PackageReference Include="Serilog.Extensions.Hosting" />
+        <PackageReference Include="Serilog.Sinks.Console" />
+        <PackageReference Include="Serilog.Sinks.File" />
+        <PackageReference Include="Google.Protobuf" />
+        <PackageReference Include="Grpc.Tools" />
+        <PackageReference Include="SolarWinds.InformationService.Contract" />
+        <PackageReference Include="System.Reactive" /> 
+        <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" />
+        <PackageReference Include="SolarWinds.Uams.Api.Public" />
+        <PackageReference Include="coverlet.collector"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="SolarWinds.UamsClient.Plugins" />
+        <!-- added explicitly to beat lower version (2.30) from SolarWinds.UamsClient.Plugins SDK -->
+        <!-- version 2.30 causes trouble with UamsResponder -->
+        <PackageReference Include="Grpc.Net.Client" />  
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="SolarWinds.AIIM.AnomalyDetection.Client.Tests" />
+        <InternalsVisibleTo Include="SolarWinds.AIIM.AnomalyDetection.Client.IntegrationTests" />
+        <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+    </ItemGroup>
+
+
+</Project>
